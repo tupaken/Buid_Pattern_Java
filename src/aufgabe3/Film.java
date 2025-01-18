@@ -66,6 +66,9 @@ public class Film {
 
 		@Override
 		public Film Erzeugen() {
+			if (this.Datum==null && this.sternebewertung!=null) {
+				throw new IllegalStateException("Datum ist erforderlich fuer SternBewertung");
+			}
 			return new Film(this);
 		}
 
